@@ -6,6 +6,7 @@ function App() {
   const [containers, setContainers] = useState<WasteContainer[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [selectedContainer, setSelectedContainer] = useState<WasteContainer | null>(null)
 
   useEffect(() => {
     const fetchContainers = async () => {
@@ -60,7 +61,12 @@ function App() {
             </div>
           ) : (
             containers.map((container) => (
-              <WasteCard key={container.id} container={container} />
+              <WasteCard 
+                key={container.id} 
+                container={container}
+                isSelected={selectedContainer?.id === container.id}
+                onSelect={setSelectedContainer}
+              />
             ))
           )}
         </div>
