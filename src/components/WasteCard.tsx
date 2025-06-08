@@ -20,7 +20,7 @@ export function WasteCard({ container, isSelected = false, onSelect }: WasteCard
   };
 
   return (
-    <div className={`overflow-hidden relative w-full rounded-lg bg-white shadow ring-2 transition-all cursor-pointer ${
+    <div className={`overflow-hidden relative w-full rounded-lg bg-white shadow ring-2 transition-all cursor-pointer hover:ring-orange-500  ${
       isSelected ? 'ring-orange-500' : 'ring-neutral-200'
     } flex flex-col justify-between items-start`} onClick={handleSelect}>
       <img src={`https://yozbrydxdlcxghkphhtq.supabase.co/storage/v1/object/public/skips/skip-sizes/${container.size}-yarder-skip.jpg`} alt={`${container.size} yard skip`} className='w-full h-64 object-cover rounded-t-lg rounded-lg' />
