@@ -1,10 +1,8 @@
 # REMwaste - Skip Hire Container Selection Interface
 
-Coding Challenge, the live version can be found at: `https://fq4rdd-5173.csb.app/` 
+Coding Challenge, the live version can be found at: `https://fq4rdd-5173.csb.app` 
 
 ## 🎯 Project Overview
-
-This project was developed as part of a front-end coding challenge to completely redesign the "choose your skip size" page from [wewantwaste.co.uk](https://wewantwaste.co.uk/). The goal was to maintain the original functionality while creating a fresh, modern user interface with improved UX/UI.
 
 ### Original Requirements
 - **Target Page**: Skip size selection page (accessed via postcode LE10 1SH → garden waste)
