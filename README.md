@@ -1,54 +1,171 @@
-# React + TypeScript + Vite
+# REMwaste - Skip Hire Container Selection Interface
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React application built as a redesign of the waste container selection page for WeWantWaste, featuring a clean, responsive interface for selecting skip hire containers.
 
-Currently, two official plugins are available:
+## 🎯 Project Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project was developed as part of a front-end coding challenge to completely redesign the "choose your skip size" page from [wewantwaste.co.uk](https://wewantwaste.co.uk/). The goal was to maintain the original functionality while creating a fresh, modern user interface with improved UX/UI.
 
-## Expanding the ESLint configuration
+### Original Requirements
+- **Target Page**: Skip size selection page (accessed via postcode LE10 1SH → garden waste)
+- **API Integration**: Consume data from `https://app.wewantwaste.co.uk/api/skips/by-location?postcode=NR32&area=Lowestoft`
+- **Complete Redesign**: Create a completely different visual design while maintaining core functionality
+- **Responsive Design**: Ensure proper display on both mobile and desktop browsers
+- **Code Quality**: Focus on clean, maintainable React code
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Key Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### ✅ What's Been Implemented
+
+- **Modern Component Architecture**: Built with TypeScript and functional React components
+- **Responsive Design**: Mobile-first approach with Tailwind CSS
+- **Interactive Container Selection**: Visual card-based selection interface
+- **Progress Indicator**: Multi-step progress visualization
+- **Real API Integration**: Fetches live data from the provided endpoint
+- **Loading States**: Skeleton cards for better UX during data fetching
+- **Error Handling**: Graceful error states with user feedback
+- **Visual Feedback**: Clear selection states and hover effects
+- **Container Details Panel**: Sliding bottom panel with selection summary
+- **Road Restrictions**: Visual indicators for containers not allowed on roads
+
+### 🎨 Design Highlights
+
+- **Card-Based Interface**: Each skip is presented as a visually appealing card with container image
+- **Visual Hierarchy**: Clear pricing, size, and rental period information
+- **Hazard Indicators**: Yellow/black striped warning for road restrictions
+- **Brand Identity**: Custom logo integration and consistent color scheme
+- **Smooth Animations**: Subtle transitions and hover effects
+- **Professional Typography**: Inter font family for modern appearance
+
+### 📱 Responsive Features
+
+- **Mobile Optimization**: Touch-friendly interface with proper spacing
+- **Flexible Grid**: Responsive container grid (1 column mobile → 3 columns desktop)
+- **Adaptive Layout**: Bottom panel adjusts for different screen sizes
+- **Horizontal Scrolling**: Progress indicator scrolls horizontally on mobile
+
+## 🛠 Tech Stack
+
+- **React 19** - Latest React with modern hooks
+- **TypeScript** - Type safety and better developer experience
+- **Vite** - Fast build tool and development server
+- **Tailwind CSS 4** - Utility-first CSS framework with latest features
+- **Heroicons** - Beautiful SVG icons
+- **Custom CSS** - Hazard stripes and additional styling
+
+## 📁 Project Structure
+
+```
+src/
+├── components/           # Reusable UI components
+│   ├── WasteCard.tsx    # Individual container card
+│   ├── SkeletonCard.tsx # Loading state component
+│   ├── StepsIndicator.tsx # Progress visualization
+│   ├── ContainerDetails.tsx # Selection summary panel
+│   └── index.ts         # Component exports
+├── types/
+│   └── index.ts         # TypeScript type definitions
+├── assets/
+│   └── images/          # Logo and static assets
+├── App.tsx              # Main application component
+├── main.tsx             # Application entry point
+└── index.css            # Global styles and Tailwind imports
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
+- Node.js (v18 or higher)
+- npm or yarn package manager
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Installation & Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd remwaste
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser**
+   Navigate to `http://localhost:5173`
+
+### Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+
+## 🎯 Implementation Approach
+
+### Design Philosophy
+- **User-Centric**: Prioritized ease of selection and clear information hierarchy
+- **Visual Appeal**: Modern card-based design with high-quality container images
+- **Accessibility**: Proper ARIA labels, keyboard navigation, and color contrast
+- **Performance**: Optimized loading states and efficient rendering
+
+### API Integration
+- Fetches container data from the provided WeWantWaste API
+- Implements proper error handling and loading states
+- Uses TypeScript interfaces for type safety
+- Handles API response mapping and data transformation
+
+### Responsive Strategy
+- Mobile-first CSS approach
+- Flexible grid system that adapts to screen size
+- Touch-optimized interactions for mobile devices
+- Horizontal scrolling for navigation elements on small screens
+
+## 🔧 Code Quality Features
+
+- **TypeScript**: Full type safety throughout the application
+- **Component Composition**: Reusable, maintainable component architecture
+- **Custom Hooks**: Clean separation of logic and presentation
+- **Error Boundaries**: Graceful error handling
+- **ESLint Configuration**: Enforced code quality standards
+- **Modern React Patterns**: Functional components with hooks
+
+## 🌟 Notable Implementation Details
+
+### Visual Enhancements
+- **Container Images**: High-quality images from Supabase storage
+- **Interactive States**: Hover effects, selection indicators, and smooth transitions
+- **Warning Systems**: Visual hazard indicators for road restrictions
+- **Brand Integration**: Custom logo and consistent color theming
+
+### UX Improvements
+- **One-Click Selection**: Simple click-to-select interface
+- **Clear Feedback**: Visual confirmation of selected items
+- **Progressive Disclosure**: Details panel appears only when needed
+- **Loading Experience**: Skeleton cards prevent layout shifts
+
+## 🚧 Future Enhancements
+
+- Complete multi-step flow implementation
+- Form validation and data persistence
+- Payment integration
+- Advanced filtering and sorting options
+- Accessibility improvements (WCAG compliance)
+- Unit and integration testing
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+---
+
+**Note**: This project demonstrates modern React development practices, responsive design principles, and attention to user experience details as requested in the coding challenge requirements.
