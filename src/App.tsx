@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { WasteCard, SkeletonCard, StepsIndicator } from './components'
+import { WasteCard, SkeletonCard, StepsIndicator, ContainerDetails } from './components'
 import type { WasteContainer } from './types'
 
 function App() {
@@ -30,6 +30,17 @@ function App() {
     fetchContainers()
   }, [])
 
+  const handleContinue = () => {
+    // continue logic here
+    console.log('Continuing with container:', selectedContainer)
+    // clear selection
+    setSelectedContainer(null)
+  }
+
+  const handleBack = () => {
+    setSelectedContainer(null)
+  }
+
   return (
     <div className="min-h-screen">
       {/* Header */}
@@ -50,7 +61,7 @@ function App() {
       </header>
 
       {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 ${selectedContainer ? 'pb-40' : ''}`}>
         {/* Container Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
           {loading ? (
@@ -74,6 +85,15 @@ function App() {
           )}
         </div>
       </main>
+
+      {/* Selected Container Details */}
+      {selectedContainer && (
+        <ContainerDetails
+          container={selectedContainer}
+          onContinue={handleContinue}
+          onBack={handleBack}
+        />
+      )}
     </div>
   )
 }
