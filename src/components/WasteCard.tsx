@@ -37,7 +37,7 @@ export function WasteCard({ container, isSelected = false, onSelect }: WasteCard
           {!container.allowed_on_road && (
             <div className='ml-2 w-fit bg-neutral-900 flex items-center justify-center gap-2 p-2 rounded-t-lg'>
               <ExclamationTriangleIcon className='text-base text-yellow-500 size-4'/>
-              <p className='text-xs text-yellow-500 rounded-t-lg'>Not allowed on the road</p>
+              <p className='text-xs text-yellow-500 font-medium rounded-t-lg'>Not allowed on the road</p>
             </div>
           )}
 

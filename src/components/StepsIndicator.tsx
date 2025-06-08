@@ -31,52 +31,54 @@ export function StepsIndicator({ currentStep = 'Select Skip' }: StepsIndicatorPr
   return (
     <div className="mb-8">
       <nav aria-label="Progress">
-        <ol className="flex items-center justify-center space-x-5">
-          {steps.map((step, stepIdx) => (
-            <li key={step.name} className="flex items-center">
-              <div className="flex items-center">
-                <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-full border-2 ${
-                    step.current
-                      ? 'border-orange-500 bg-orange-50'
-                      : step.completed
-                      ? 'border-orange-500 bg-orange-50'
-                      : 'border-gray-300 bg-white'
-                  }`}
-                >
-                  <step.icon
-                    className={`h-5 w-5 ${
+        <div className="overflow-x-auto scrollbar-hide">
+          <ol className="flex items-center justify-center space-x-5 min-w-max px-4">
+            {steps.map((step, stepIdx) => (
+              <li key={step.name} className="flex items-center flex-shrink-0">
+                <div className="flex items-center">
+                  <div
+                    className={`flex h-10 w-10 items-center justify-center rounded-full border-2 ${
+                      step.current
+                        ? 'border-orange-500 bg-orange-50'
+                        : step.completed
+                        ? 'border-orange-500 bg-orange-50'
+                        : 'border-gray-300 bg-white'
+                    }`}
+                  >
+                    <step.icon
+                      className={`h-5 w-5 ${
+                        step.current
+                          ? 'text-orange-500'
+                          : step.completed
+                          ? 'text-orange-500'
+                          : 'text-gray-400'
+                      }`}
+                      aria-hidden="true"
+                    />
+                  </div>
+                  <span
+                    className={`ml-2 text-sm font-medium whitespace-nowrap ${
                       step.current
                         ? 'text-orange-500'
                         : step.completed
-                        ? 'text-orange-500'
-                        : 'text-gray-400'
+                        ? 'text-orange-600'
+                        : 'text-gray-500'
                     }`}
-                    aria-hidden="true"
-                  />
+                  >
+                    {step.name}
+                  </span>
                 </div>
-                <span
-                  className={`ml-2 text-sm font-medium ${
-                    step.current
-                      ? 'text-orange-500'
-                      : step.completed
-                      ? 'text-orange-600'
-                      : 'text-gray-500'
-                  }`}
-                >
-                  {step.name}
-                </span>
-              </div>
-              {stepIdx !== steps.length - 1 && (
-                <div
-                  className={`ml-5 h-0.5 w-8 ${
-                    step.completed ? 'bg-orange-500' : 'bg-gray-300'
-                  }`}
-                />
-              )}
-            </li>
-          ))}
-        </ol>
+                {stepIdx !== steps.length - 1 && (
+                  <div
+                    className={`ml-5 h-0.5 w-8 flex-shrink-0 ${
+                      step.completed ? 'bg-orange-500' : 'bg-gray-300'
+                    }`}
+                  />
+                )}
+              </li>
+            ))}
+          </ol>
+        </div>
       </nav>
     </div>
   )
