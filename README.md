@@ -1,6 +1,6 @@
 # REMwaste - Skip Hire Container Selection Interface
 
-A modern React application built as a redesign of the waste container selection page for WeWantWaste, featuring a clean, responsive interface for selecting skip hire containers.
+Coding Challenge, the live version can be found at: `https://fq4rdd-5173.csb.app/` 
 
 ## 🎯 Project Overview
 
@@ -115,7 +115,7 @@ src/
 - **Performance**: Optimized loading states and efficient rendering
 
 ### API Integration
-- Fetches container data from the provided WeWantWaste API
+- Fetches container data from the provided API
 - Implements proper error handling and loading states
 - Uses TypeScript interfaces for type safety
 - Handles API response mapping and data transformation
@@ -130,42 +130,11 @@ src/
 
 - **TypeScript**: Full type safety throughout the application
 - **Component Composition**: Reusable, maintainable component architecture
-- **Custom Hooks**: Clean separation of logic and presentation
 - **Error Boundaries**: Graceful error handling
-- **ESLint Configuration**: Enforced code quality standards
 - **Modern React Patterns**: Functional components with hooks
 
-## 🌟 Notable Implementation Details
-
-### Visual Enhancements
-- **Container Images**: High-quality images from Supabase storage
-- **Interactive States**: Hover effects, selection indicators, and smooth transitions
-- **Warning Systems**: Visual hazard indicators for road restrictions
-- **Brand Integration**: Custom logo and consistent color theming
-
-### UX Improvements
+## UX Improvements
 - **One-Click Selection**: Simple click-to-select interface
 - **Clear Feedback**: Visual confirmation of selected items
 - **Progressive Disclosure**: Details panel appears only when needed
 - **Loading Experience**: Skeleton cards prevent layout shifts
-
-## 🚧 Future Enhancements
-
-- Complete multi-step flow implementation
-- Form validation and data persistence
-- Payment integration
-- Advanced filtering and sorting options
-- Accessibility improvements (WCAG compliance)
-- Unit and integration testing
-
-## 📱 Browser Support
-
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
----
-
-**Note**: This project demonstrates modern React development practices, responsive design principles, and attention to user experience details as requested in the coding challenge requirements.
