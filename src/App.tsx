@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { WasteCard, SkeletonCard, StepsIndicator, ContainerDetails } from './components'
 import type { WasteContainer } from './types'
-
+import logoImage from './assets/images/logo.png'
 function App() {
   const [containers, setContainers] = useState<WasteContainer[]>([])
   const [loading, setLoading] = useState(true)
@@ -43,6 +43,13 @@ function App() {
 
   return (
     <div className="min-h-screen">
+
+ <img 
+              src={logoImage} 
+              alt="RemWaste Logo" 
+              className="mx-auto my-4 h-16 w-auto"
+            />
+
       {/* Header */}
       <header className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">

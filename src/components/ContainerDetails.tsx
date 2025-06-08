@@ -10,11 +10,12 @@ export function ContainerDetails({ container, onContinue, onBack }: ContainerDet
   return (
     <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-neutral-200 shadow-lg p-6 animate-slide-up">
   
+    <div className='hazard-background h-2 w-full absolute top-0 left-0 right-0 z-10'></div>
 
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-center mb-4 gap-4">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
 
-          <div className="flex items-center justify-between gap-4 md:gap-1 md:flex-col">
+          <div className="flex items-center md:items-start justify-between gap-4 md:gap-1 md:flex-col">
               <h3 className="text-lg font-semibold text-neutral-900">
                 {container.size} Yard Skip
               </h3>
