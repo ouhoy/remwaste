@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { WasteCard, SkeletonCard } from './components'
+import { WasteCard, SkeletonCard, StepsIndicator } from './components'
 import type { WasteContainer } from './types'
 
 function App() {
@@ -35,6 +35,9 @@ function App() {
       {/* Header */}
       <header className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+          {/* Steps Indicator */}
+          <StepsIndicator />
+          
           <div className="text-center">
             <h1 className="text-3xl font-bold text-neutral-900">
               RemWaste Container Service
