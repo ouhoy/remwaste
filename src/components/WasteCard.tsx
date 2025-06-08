@@ -6,13 +6,17 @@ import { ExclamationTriangleIcon, CheckCircleIcon } from '@heroicons/react/24/ou
 interface WasteCardProps {
   container: WasteContainer;
   isSelected?: boolean;
-  onSelect?: (container: WasteContainer) => void;
+  onSelect?: (container: WasteContainer | null) => void;
 }
 
 
 export function WasteCard({ container, isSelected = false, onSelect }: WasteCardProps) {
   const handleSelect = () => {
-    onSelect?.(container);
+    if (isSelected) {
+      onSelect?.(null);
+    } else {
+      onSelect?.(container);
+    }
   };
 
   return (
@@ -42,7 +46,7 @@ export function WasteCard({ container, isSelected = false, onSelect }: WasteCard
               <p className='text-base font-medium text-neutral-900'>{container.size} Yard Skip</p>
               <p className='text-base text-neutral-900'>£{container.price_before_vat}</p>
             </div>
-            <button className={`pointer text-sm font-medium text-white flex items-center justify-center gap-2 rounded-full py-2 px-4 transition-colors ${
+            <button className={`pointer text-sm font-medium text-white flex items-center justify-center gap-2 rounded-full py-2 px-4 transition-colors select-none ${
               isSelected ? 'bg-orange-500' : 'bg-neutral-900'
             }`}>
               {isSelected ? 'Selected' : 'Select'}

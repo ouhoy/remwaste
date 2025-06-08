@@ -65,7 +65,7 @@ function App() {
                 key={container.id} 
                 container={container}
                 isSelected={selectedContainer?.id === container.id}
-                onSelect={setSelectedContainer}
+                onSelect={(container) => setSelectedContainer(container)}
               />
             ))
           )}
